@@ -22,7 +22,7 @@ function generateurCitation() {
 		type = prompt("Ceci n'est pas un des deux types disponibles\nVeuillez saisir 'Saluer' ou 'Jedi'").toLowerCase();
 	}
 
-	// Si le type est "Saluer" on génère le nombre choisi de citations aléatoire du type "Saluer"
+	// Si le type choisi est "Saluer" on génère le nombre choisi de citations aléatoire du type "Saluer"
 	if (type === "saluer") {
 		for (i = 1; i <= nombre; i++) {
 			var random1 = Math.floor(Math.random() * PhrasesDebutSaluer.length);
@@ -31,7 +31,7 @@ function generateurCitation() {
 			console.log("Citation aléatoire " + '"' + type + '"'+ " n°" + i + ": " + PhrasesDebutSaluer[random1] + PhrasesMilieuSaluer[random2] + PhrasesFinSaluer[random3]);
 		}
 
-	// Si le type est "Jedi" on génère le nombre choisi de citations aléatoire du type "Jedi"
+	// Si le type choisi est "Jedi" on génère le nombre choisi de citations aléatoire du type "Jedi"
 	} else if (type === "jedi") {
 		for (j = 1; j <= nombre; j++) {
 			var random4 =Math.floor(Math.random() * PhrasesDebutJedi.length);
@@ -45,7 +45,7 @@ function generateurCitation() {
 // Définition de la fonction de répétition du générateur
 function repetition() {
 	while ((choix !== "continuer") && (choix !== "stop")) {
-			choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
+		choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	}
 
 	// Si le choix est "continuer" on relance la fonction générateur de citation et on reset a valeur de choix
@@ -55,14 +55,14 @@ function repetition() {
 
 	// Si le choix est "stop" on met un message de fin et le programme s'arrête
 	} else if (choix === "stop") {
-		console.log("Merci d'avoir utilisé ce générateur de citation aléatoire\nN'hésitez pas à valider le projet si il vous a plu!")
+		console.log("Merci d'avoir utilisé ce générateur de citation aléatoire\nN'hésitez pas à valider le projet si il vous a plu!");
 	}
 }
 
 // Programme exécuté
-var choix = "";
-
 generateurCitation();
+
+var choix = "";
 
 while (choix === "") {
 	repetition();
