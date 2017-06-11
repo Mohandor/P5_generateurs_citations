@@ -44,8 +44,9 @@ function generateurCitation() {
 
 // Définition de la fonction de répétition du générateur
 function repetition() {
+	choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	while ((choix !== "continuer") && (choix !== "stop")) {
-		choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
+		choix = prompt("Ceci n'est pas 'continuer' ou 'stop'\nSaisir 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	}
 
 	// Si le choix est "continuer" on relance la fonction générateur de citation et on reset a valeur de choix
