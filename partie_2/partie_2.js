@@ -3,10 +3,10 @@ var PhrasesDebutSaluer = ["Salutation, ", "Bonjour, ", "Bonsoir, ", "Salut, "];
 var PhrasesMilieuSaluer = ["comment-allez vous ", "comment vous sentez-vous ", "comment va votre famille ", "comment vont les enfants "];
 var PhrasesFinSaluer = ["depuis la dernière fois?", "aujourd'hui?", "après les événements passés?", "maintenant que tout est terminé?"];
 
-// Tableau pour les phrases du type 'Jedi'
-var PhrasesDebutJedi = ["", "", "", ""];
-var PhrasesMilieuJedi = ["", "", "", ""];
-var PhrasesFinJedi = ["", "", "", ""];
+// Tableau pour les phrases du type 'Repas'
+var PhrasesDebutRepas = ["Délicieux ", "Dégoutant ", "Apétissant ", "Merveilleux ", "Extraordinaire ", "Sublime "];
+var PhrasesMilieuRepas = ["roti de boeuf ", " steak de tofu ", "tajine ", "carpaccio de boeuf "];
+var PhrasesFinRepas = ["et ses frites.", "accompagné de sa ratatouille.", "avec en desert une mousse au chocolat.", "et son tiramisu en desert.", "avec comme desert un sorbet à la poire.", "et sa purée."];
 
 // Définition de la fonction générateur de citations
 function generateurCitation() {
@@ -16,10 +16,10 @@ function generateurCitation() {
 		nombre = Number(prompt("Ceci n'est pas un nombre compris entre 1 et 5\nVeuillez saisir un nombre compris entre 1 et 5: "));
 	}
 
-	// tant que le choix du type n'est pas "Saluer" ou "Jedi" le prompt reviendra
-	type = prompt("Choisiez le type de citation que vous souhaitez entre 'Saluer' et 'Jedi': ").toLowerCase();
-	while ((type !== "saluer") && (type !== "jedi")) {
-		type = prompt("Ceci n'est pas un des deux types disponibles\nVeuillez saisir 'Saluer' ou 'Jedi'").toLowerCase();
+	// tant que le choix du type n'est pas "Saluer" ou "Repas" le prompt reviendra
+	type = prompt("Choisiez le type de citation que vous souhaitez entre 'Saluer' et 'Repas': ").toLowerCase();
+	while ((type !== "saluer") && (type !== "repas")) {
+		type = prompt("Ceci n'est pas un des deux types disponibles\nVeuillez saisir 'Saluer' ou 'Repas'").toLowerCase();
 	}
 
 	// Si le type choisi est "Saluer" on génère le nombre choisi de citations aléatoire du type "Saluer"
@@ -31,13 +31,13 @@ function generateurCitation() {
 			console.log("Citation aléatoire " + '"' + type + '"'+ " n°" + i + ": " + PhrasesDebutSaluer[random1] + PhrasesMilieuSaluer[random2] + PhrasesFinSaluer[random3]);
 		}
 
-	// Si le type choisi est "Jedi" on génère le nombre choisi de citations aléatoire du type "Jedi"
-	} else if (type === "jedi") {
+	// Si le type choisi est "Repas" on génère le nombre choisi de citations aléatoire du type "Repas"
+	} else if (type === "repas") {
 		for (j = 1; j <= nombre; j++) {
-			var random4 =Math.floor(Math.random() * PhrasesDebutJedi.length);
-			var random5 =Math.floor(Math.random() * PhrasesMilieuJedi.length);
-			var random6 =Math.floor(Math.random() * PhrasesFinJedi.length);
-			console.log(PhrasesDebutJedi[random4] + PhrasesMilieuJedi[random5] + PhrasesFinJedi[random6]);
+			var random4 =Math.floor(Math.random() * PhrasesDebutRepas.length);
+			var random5 =Math.floor(Math.random() * PhrasesMilieuRepas.length);
+			var random6 =Math.floor(Math.random() * PhrasesFinRepas.length);
+			console.log(PhrasesDebutRepas[random4] + PhrasesMilieuRepas[random5] + PhrasesFinRepas[random6]);
 		}
 	}
 }
