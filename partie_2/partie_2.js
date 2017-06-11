@@ -13,13 +13,13 @@ function generateurCitation() {
 	// Tant que le nombre tapé n'est pas compris entre le 1 et 5 le prompt reviendra
 	nombre = Number(prompt("Choisisez le nombres de citations que vous souhaitez (entre 1 et 5): "));
 	while ((nombre < 1) || (nombre > 5) || (isNaN(nombre) === true)) {
-		nombre = Number(prompt("Ceci n'est pas un nombre compris entre 1 et 5\nVeuillez saisir un nombre compris entre 1 et 5: "));
+		nombre = Number(prompt("Ceci n'est pas un nombre compris entre 1 et 5.\nVeuillez saisir un nombre compris entre 1 et 5: "));
 	}
 
 	// tant que le choix du type n'est pas "Saluer" ou "Repas" le prompt reviendra
 	type = prompt("Choisiez le type de citation que vous souhaitez entre 'Saluer' et 'Repas': ").toLowerCase();
 	while ((type !== "saluer") && (type !== "repas")) {
-		type = prompt("Ceci n'est pas un des deux types disponibles\nVeuillez saisir 'Saluer' ou 'Repas'").toLowerCase();
+		type = prompt("Ceci n'est pas un des deux types disponibles.\nVeuillez saisir 'Saluer' ou 'Repas'").toLowerCase();
 	}
 
 	// Si le type choisi est "Saluer" on génère le nombre choisi de citations aléatoire du type "Saluer"
@@ -46,7 +46,7 @@ function generateurCitation() {
 function repetition() {
 	choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	while ((choix !== "continuer") && (choix !== "stop")) {
-		choix = prompt("Ceci n'est pas 'continuer' ou 'stop'\nSaisir 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
+		choix = prompt("Ceci n'est pas 'continuer' ou 'stop'.\nSaisir 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	}
 
 	// Si le choix est "continuer" on relance la fonction générateur de citation et on reset a valeur de choix
@@ -56,7 +56,7 @@ function repetition() {
 
 	// Si le choix est "stop" on met un message de fin et le programme s'arrête
 	} else if (choix === "stop") {
-		console.log("Merci d'avoir utilisé ce générateur de citation aléatoire\nN'hésitez pas à valider le projet si il vous a plu!");
+		console.log("Merci d'avoir utilisé ce générateur de citation aléatoire.\nN'hésitez pas à valider le projet si il vous a plu!");
 	}
 }
 
