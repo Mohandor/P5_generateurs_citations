@@ -11,15 +11,15 @@ var PhrasesFinRepas = ["et ses frites.", "accompagné de sa ratatouille.", "avec
 // Définition de la fonction générateur de citations
 function generateurCitation() {
 	// Tant que le nombre tapé n'est pas compris entre le 1 et 5 le prompt reviendra
-	nombre = Number(prompt("Choisisez le nombres de citations que vous souhaitez (entre 1 et 5): "));
+	var nombre = Number(prompt("Choisisez le nombres de citations que vous souhaitez (entre 1 et 5): "));
 	while ((nombre < 1) || (nombre > 5) || (isNaN(nombre) === true)) {
 		nombre = Number(prompt("Ceci n'est pas un nombre compris entre 1 et 5.\nVeuillez saisir un nombre compris entre 1 et 5: "));
 	}
 
-	// tant que le choix du type n'est pas "Saluer" ou "Repas" le prompt reviendra
-	type = prompt("Choisiez le type de citation que vous souhaitez entre 'Saluer' et 'Repas': ").toLowerCase();
+	// Tant que le choix du type n'est pas "Saluer" ou "Repas" le prompt reviendra
+	var type = prompt("Choisiez le type de citation que vous souhaitez entre 'Saluer' et 'Repas': ").toLowerCase();
 	while ((type !== "saluer") && (type !== "repas")) {
-		type = prompt("Ceci n'est pas un des deux types disponibles.\nVeuillez saisir 'Saluer' ou 'Repas'").toLowerCase();
+		type = prompt("Ceci n'est pas un des deux types disponibles.\nVeuillez saisir 'Saluer' ou 'Repas': ").toLowerCase();
 	}
 
 	// Si le type choisi est "Saluer" on génère le nombre choisi de citations aléatoire du type "Saluer"
@@ -37,9 +37,12 @@ function generateurCitation() {
 			var random4 =Math.floor(Math.random() * PhrasesDebutRepas.length);
 			var random5 =Math.floor(Math.random() * PhrasesMilieuRepas.length);
 			var random6 =Math.floor(Math.random() * PhrasesFinRepas.length);
-			console.log(PhrasesDebutRepas[random4] + PhrasesMilieuRepas[random5] + PhrasesFinRepas[random6]);
+			console.log("Citation aléatoire " + '"' + type + '"'+ " n°" + j + ": " + PhrasesDebutRepas[random4] + PhrasesMilieuRepas[random5] + PhrasesFinRepas[random6]);
 		}
 	}
+
+	// Fonction de répétition ou arrêt du programme
+	repetition();
 }
 
 // Définition de la fonction de répétition du générateur
@@ -52,7 +55,6 @@ function repetition() {
 	// Si le choix est "continuer" on relance la fonction générateur de citation et on reset a valeur de choix
 	if (choix === "continuer") {
 		generateurCitation();
-		choix = "";
 
 	// Si le choix est "stop" on met un message de fin et le programme s'arrête
 	} else if (choix === "stop") {
@@ -62,9 +64,3 @@ function repetition() {
 
 // Programme exécuté
 generateurCitation();
-
-var choix = "";
-
-while (choix === "") {
-	repetition();
-}
