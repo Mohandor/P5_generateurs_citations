@@ -10,7 +10,7 @@ var PhrasesFinRepas = ["et ses frites.", "accompagné de sa ratatouille.", "avec
 
 // Définition de la fonction générateur de citations
 function generateurCitation() {
-	// Tant que le nombre tapé n'est pas compris entre le 1 et 5 le prompt reviendra
+	// Tant que le nombre tapé n'est pas compris entre 1 et 5 le prompt reviendra
 	var nombre = Number(prompt("Choisisez le nombres de citations que vous souhaitez (entre 1 et 5): "));
 	while ((nombre < 1) || (nombre > 5) || (isNaN(nombre) === true)) {
 		nombre = Number(prompt("Ceci n'est pas un nombre compris entre 1 et 5.\nVeuillez saisir un nombre compris entre 1 et 5: "));
@@ -47,12 +47,13 @@ function generateurCitation() {
 
 // Définition de la fonction de répétition du générateur
 function repetition() {
+	// Tant que 'choix' n'est pas continuer ou stop le prompt reviendra
 	var choix = prompt("Taper 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	while ((choix !== "continuer") && (choix !== "stop")) {
 		choix = prompt("Ceci n'est pas 'continuer' ou 'stop'.\nSaisir 'continuer' si vous voulez générer d'autres citations ou 'stop' si vous voulez arrêter le programme").toLowerCase();
 	}
 
-	// Si le choix est "continuer" on relance la fonction générateur de citation et on reset a valeur de choix
+	// Si le choix est "continuer" on relance la fonction générateur de citation
 	if (choix === "continuer") {
 		generateurCitation();
 
